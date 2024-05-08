@@ -1,0 +1,14 @@
+model_path: models/en_ppstructure_mobile_v2_SLANet.onnx
+
+use_cuda: false
+# Details of the params: https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+CUDAExecutionProvider:
+    device_id: 0
+    arena_extend_strategy: kNextPowerOfTwo
+    cudnn_conv_algo_search: EXHAUSTIVE
+    do_copy_in_default_stream: true
+
+table_algorithm: TableAttn
+table_max_len: 488
+table_char_dict_path: table/table_structure_dict.txt
+merge_no_span_structure: true

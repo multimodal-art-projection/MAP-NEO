@@ -1,0 +1,97 @@
+Global:
+    text_score: 0.5
+    use_angle_cls: true
+    use_text_det: true
+    print_verbose: false
+    min_height: 30
+    width_height_ratio: 8
+
+Det:
+    use_cuda: true
+
+    model_path: models/det_infer.onnx
+
+    limit_side_len: 736
+    limit_type: min
+
+    thresh: 0.3
+    box_thresh: 0.5
+    max_candidates: 1000
+    unclip_ratio: 1.6
+    use_dilation: true
+    score_mode: fast
+
+Cls:
+    use_cuda: falsetrue
+
+    model_path: models/cls_infer.onnx
+
+    cls_image_shape: [3, 48, 192]
+    cls_batch_num: 6
+    cls_thresh: 0.9
+    label_list: ['0', '180']
+
+Rec:
+    use_cuda: true
+
+    model_path: models/rec_infer.onnx
+
+    rec_img_shape: [3, 48, 320]
+    rec_batch_num: 6
+
+Table:
+    model_path: models/table_infer_en.onnx
+
+    use_cuda: true
+    # Details of the params: https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+    CUDAExecutionProvider:
+        device_id: 0
+        arena_extend_strategy: kNextPowerOfTwo
+        cudnn_conv_algo_search: EXHAUSTIVE
+        do_copy_in_default_stream: true
+
+    table_algorithm: TableAttn
+    table_max_len: 488
+    table_char_dict_path: table/table_structure_dict.txt
+    merge_no_span_structure: true
+
+PP_Table:
+    model_path: models/ch_ppstructure_mobile_v2.0_SLANet_infer
+
+    use_cuda: true
+    # Details of the params: https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+    CUDAExecutionProvider:
+        device_id: 0
+        arena_extend_strategy: kNextPowerOfTwo
+        cudnn_conv_algo_search: EXHAUSTIVE
+        do_copy_in_default_stream: true
+
+    table_algorithm: TableAttn
+    table_max_len: 488
+    merge_no_span_structure: true
+
+    use_onnx: false
+    table_char_dict_path: models/ch_ppstructure_mobile_v2.0_SLANet_infer/table_structure_dict.txt
+    merge_no_span_structure: true
+    benchmark: false
+    table_model_dir: models/ch_ppstructure_mobile_v2.0_SLANet_infer
+    use_gpu: true
+    gpu_mem: 2400
+    gpu_id: 0
+    use_tensorrt: false
+
+
+Struc:
+    model_path: models/struc_infer_cdla.onnx
+
+    use_cuda: false
+    # Details of the params: https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+    CUDAExecutionProvider:
+        device_id: 0
+        arena_extend_strategy: kNextPowerOfTwo
+        cudnn_conv_algo_search: EXHAUSTIVE
+        do_copy_in_default_stream: true
+
+    layout_dict_path: struc/layout_cdla_dict.txt
+    layout_score_threshold: 0.5
+    layout_nms_threshold: 0.5

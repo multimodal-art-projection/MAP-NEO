@@ -1,0 +1,13 @@
+model_path: models/layout_cdla.onnx
+
+use_cuda: false
+# Details of the params: https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+CUDAExecutionProvider:
+    device_id: 0
+    arena_extend_strategy: kNextPowerOfTwo
+    cudnn_conv_algo_search: EXHAUSTIVE
+    do_copy_in_default_stream: true
+
+layout_dict_path: struc/layout_cdla_dict.txt
+layout_score_threshold: 0.5
+layout_nms_threshold: 0.5
