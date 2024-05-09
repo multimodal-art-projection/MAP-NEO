@@ -1,4 +1,4 @@
-# MAP-NEO:
+# MAP-NEO: A fully open-sourced Large Language Model
 
 
 ## Introduction
