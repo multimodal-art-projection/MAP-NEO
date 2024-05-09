@@ -1,26 +1,19 @@
 import argparse
-import copy
-import json
 import os
 import time
-import cv2
-import fitz
 import fastdeploy as fd
 from multiprocessing import Pool
-from threading import Thread
+# from threading import Thread
 import pickle
 
 import numpy as np
 
-from copy import deepcopy
-from latex.latex_rec import Latex2Text, save_layout_img, sort_boxes
-from table.utils import TableMatch, sorted_boxes
-from utils import convert_info_docx, convert_info_md, download_and_extract_models, read_yaml, sorted_layout_boxes, document_to_xl
+from latex.latex_rec import Latex2Text, sort_boxes
+from table.utils import TableMatch
+from utils import convert_info_docx, convert_info_md, download_and_extract_models, read_image, read_yaml, save_structure_res, sorted_layout_boxes
 from table.table_det import table
-from PIL import Image
 
-from cnstd import LayoutAnalyzer
-
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 device = "gpu"
 device_id = 0
@@ -171,69 +164,9 @@ def expand(pix, det_box, shape):
     y1_ = tmp_y1 if tmp_y1 <= h else h
     return x0_, y0_, x1_, y1_
 
-def to_excel(html_table, excel_path):
-    document_to_xl(html_table, excel_path)
-
-def readImage(image_file) -> list:
-    if os.path.basename(image_file)[-3:] == 'pdf':
-        imgs = []
-        with fitz.open(image_file) as pdf:
-            for pg in range(0, pdf.page_count):
-                page = pdf[pg]
-                mat = fitz.Matrix(2, 2)
-                pm = page.get_pixmap(matrix=mat, alpha=False)
-
-                # if width or height > 2000 pixels, don't enlarge the image
-                if pm.width > 2000 or pm.height > 2000:
-                    pm = page.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False)
-
-                img = Image.frombytes("RGB", [pm.width, pm.height], pm.samples)
-                img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
-                imgs.append(img)
-    else:
-        img = cv2.imread(image_file, cv2.IMREAD_COLOR)
-        if img is not None:
-            imgs = [img]
-
-    return imgs
-
-def save_structure_res(res, save_folder, img_name, img_idx=0):
-    excel_save_folder = os.path.join(save_folder, img_name)
-    os.makedirs(excel_save_folder, exist_ok=True)
-    res_cp = deepcopy(res)
-    # save res
-    with open(
-            os.path.join(excel_save_folder, 'res_{}.txt'.format(img_idx)),
-            'w',
-            encoding='utf8') as f:
-        for region in res_cp:
-            roi_img = region.pop('img')
-            try:
-                f.write('{}\n'.format(json.dumps(region)))
-            except Exception as e:
-                print(e)
-                print(region)
-
-            if region['type'].lower() == 'table' and len(region[
-                    'res']) > 0 and 'html' in region['res']:
-                if region['res']['html'] is None:
-                    img_path = os.path.join(
-                        excel_save_folder,
-                        '{}_{}.jpg'.format(region['bbox'], img_idx))
-                    cv2.imwrite(img_path, roi_img)
-                else:
-                    excel_path = os.path.join(
-                        excel_save_folder,
-                        '{}_{}.xlsx'.format(region['bbox'], img_idx))
-                    to_excel(region['res']['html'], excel_path)
-            elif region['type'].lower() == 'figure':
-                img_path = os.path.join(
-                    excel_save_folder,
-                    '{}_{}.jpg'.format(region['bbox'], img_idx))
-                cv2.imwrite(img_path, roi_img)
 
 def process_predict(pdf_info, img_idx=0):
-    images = readImage(pdf_info[0])
+    images = read_image(pdf_info[0])
     all_res = []
     start = time.time()
     for image in images:

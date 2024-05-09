@@ -141,7 +141,7 @@ class OrtInferSession:
 class ONNXRuntimeError(Exception):
     pass
 
-def download_and_extract_models(model_url='https://molar-public.oss-cn-hangzhou.aliyuncs.com/models.tar.gz', models_folder='models'):    
+def download_and_extract_models(model_url='https://molar-public.oss-cn-hangzhou.aliyuncs.com/models.tar.gz', models_folder='models'): 
     try:
         if not os.path.exists(models_folder):
             os.makedirs(models_folder)
@@ -1375,10 +1375,10 @@ def convert_info_md(img, res, save_folder, img_name):
         elif region['type'].lower() == 'table':
             md_out.add_table(region['res']['html'])
         elif region['type'].lower() == 'text':
-            txt = ''.join(it['text'] for it in region['res'])
+            txt = '\n'.join(it['text'] for it in region['res'])
             md_out.add_text(txt)
         elif region['type'].lower() == 'title':
-            txt = ''.join(it['text'] for it in region['res'])
+            txt = ' '.join(it['text'] for it in region['res'])
             md_out.add_title(txt)
         elif region['type'].lower() == 'list':
             txt_list = [it['text'] for it in region['res']]
@@ -1387,3 +1387,71 @@ def convert_info_md(img, res, save_folder, img_name):
             
     md_path = os.path.join(save_folder, f'{img_name}_ocr.md')
     md_out.save(md_path)
+
+from copy import deepcopy
+import json
+import os
+import time
+import fitz
+
+def read_image(image_file) -> list:
+    if os.path.basename(image_file)[-3:] == 'pdf':
+        imgs = []
+        with fitz.open(image_file) as pdf:
+            for pg in range(0, pdf.page_count):
+                page = pdf[pg]
+                mat = fitz.Matrix(2, 2)
+                pm = page.get_pixmap(matrix=mat, alpha=False)
+
+                # if width or height > 2000 pixels, don't enlarge the image
+                if pm.width > 2000 or pm.height > 2000:
+                    pm = page.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False)
+
+                img = Image.frombytes("RGB", [pm.width, pm.height], pm.samples)
+                img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
+                imgs.append(img)
+    else:
+        img = cv2.imread(image_file, cv2.IMREAD_COLOR)
+        if img is not None:
+            imgs = [img]
+
+    return imgs
+
+
+def save_structure_res(res, save_folder, img_name, img_idx=0):
+    excel_save_folder = os.path.join(save_folder, img_name)
+    os.makedirs(excel_save_folder, exist_ok=True)
+    res_cp = deepcopy(res)
+    # save res
+    with open(
+            os.path.join(excel_save_folder, 'res_{}.txt'.format(img_idx)),
+            'w',
+            encoding='utf8') as f:
+        for region in res_cp:
+            roi_img = region.pop('img')
+            try:
+                f.write('{}\n'.format(json.dumps(region)))
+            except Exception as e:
+                print(e)
+                print(region)
+
+            if region['type'].lower() == 'table' and len(region[
+                    'res']) > 0 and 'html' in region['res']:
+                if region['res']['html'] is None:
+                    img_path = os.path.join(
+                        excel_save_folder,
+                        '{}_{}.jpg'.format(region['bbox'], img_idx))
+                    cv2.imwrite(img_path, roi_img)
+                else:
+                    excel_path = os.path.join(
+                        excel_save_folder,
+                        '{}_{}.xlsx'.format(region['bbox'], img_idx))
+                    to_excel(region['res']['html'], excel_path)
+            elif region['type'].lower() == 'figure':
+                img_path = os.path.join(
+                    excel_save_folder,
+                    '{}_{}.jpg'.format(region['bbox'], img_idx))
+                cv2.imwrite(img_path, roi_img)
+                
+def to_excel(html_table, excel_path):
+    document_to_xl(html_table, excel_path)
