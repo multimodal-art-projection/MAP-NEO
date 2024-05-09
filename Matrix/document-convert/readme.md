@@ -30,3 +30,14 @@ Our uses the multithreading feature of fastdeploy. If a GPU OOM (Out of Memory) 
 
 Note:
 Ensure you replace <pdf-path> with the actual path to the PDF file you wish to convert.
+
+### TODO 
+- [ ]  Add a post-processing module
+- [ ]  Refine the generation effect of markdown
+
+### Acknowledgements
+Many thanks to following codes that help us a lot in building this codebase:
+* [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
+* [Pix2Text](https://github.com/breezedeus/Pix2Text)
+* [RapidOCR](https://github.com/RapidAI/RapidOCR)
+* [marker](https://github.com/VikParuchuri/marker)
