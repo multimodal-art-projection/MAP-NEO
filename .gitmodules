@@ -1,0 +1,3 @@
+[submodule "Megatron-LM-NEO"]
+	path = Megatron-LM-NEO
+	url = https://github.com/multimodal-art-projection/Megatron-LM-NEO.git
