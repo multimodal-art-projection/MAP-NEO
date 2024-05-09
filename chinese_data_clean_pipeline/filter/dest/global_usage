@@ -1,0 +1,894 @@
+#
+#	Franck Bourdonnec, and some users want to have a catalog
+#	of database. Some want a per database/file, some want a global one.
+#	this is the global
+#	I only put French and English description
+#	ANY Help on description is welcome (spanish, german, italian, etc.)
+#
+#	NAME : name of tar blacklist
+#	DEFAULT_TYPE : what is the primary use of this blacklist (can be inverted, i.e. for webmail)
+#	SOURCE : Url of the main provider of information
+#	NAME xx: Short name used display in listbox, menu choice etc for xx Language
+#	DESC xx: Description of the blacklist for xx Language
+#
+#	to participate : <mailto:fabrice.prigent@ut-capitole.fr>
+#
+NAME:	adult
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Some adult site from erotic to hard pornography.
+DESC FR: Des sites adultes allant de l'érotique à la pornographie dure.
+DESC RU: Некоторые взрослые сайты от эротики до жесткой порнографии.
+DESC ES: Sitios para adultos, desde erotísmo a pornografía dura.
+NAME EN: Adult (X)
+NAME FR: Adulte (X)
+NAME IT: Siti per adulti (XXX)
+NAME NL: 18+ (X)
+NAME RU: Эротика
+NAME DE: Porno
+NAME ES: Porno
+
+NAME:	agressif
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Some aggressive sites.
+DESC FR: Quelques sites racistes, antisémites, incitant à la haine.
+DESC RU: Некоторые агрессивные веб-сайты расистского, антисемитского, разжигания ненависти.
+DESC ES: Sitios agresivos, racistas, que incitan a la violencia.
+NAME EN: Aggressive (english)
+NAME FR: Agréssif (anglais)
+NAME IT: Aggressività in inglese)
+NAME NL: Aggressief (engels)
+NAME RU: Агрессия (английский)
+NAME DE: Aggressiver (englisch)
+NAME ES: Agresivo 
+
+
+NAME:	audio-video
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Some audio and video sites.
+DESC FR: Quelques sites orientés vers l'audio et la vidéo.
+DESC RU: Некоторые сайты, ориентированные на аудио и видео.
+DESC ES: Sitios de audio y vídeo.
+NAME EN: Audio/Video
+NAME FR: Audio/Vidéo
+NAME IT: Audio/Video
+NAME NL: Audio/Video
+NAME RU: Звук/Видео
+NAME DE: Audio/Video
+NAME ES: Audio/Video
+
+NAME:	blog
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Some blogs sites.
+DESC FR: Quelques sites hébergeant des blogs.
+DESC RU: Некоторые сайты-блоги.
+DESC ES: Sitios de Blogs
+NAME EN: blogs
+NAME FR: blogs
+NAME IT: blogs
+NAME NL: blogs
+NAME DE: blogs
+NAME RU: Блоги.
+NAME ES: blogs
+
+NAME:	cleaning
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites to disinfect, update and protect computers.
+DESC FR: Sites pour désinfecter et mettre à jour des ordinateurs.
+DESC RU: Сайты для лечения, обновления и защиты компьютеров.
+DESC ES: Sitios para desinfectar, actualizar y proteger ordenadores.
+NAME EN: Cleanup, Antivirus etc
+NAME FR: Nettoyage, Antivirus, etc
+NAME IT: Sicurezza (Antispyware, Antivirus ecc)
+NAME NL: Cleanup, Antivirus etc
+NAME DE: Antivirustools etc
+NAME RU: Очистка, антивирусы и т. д.
+NAME ES: Antivirus, limpieza, etc.
+
+NAME:	dangerous_material
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites which describe how to make bomb and some dangerous material.
+DESC FR: Sites décrivant des moyens de créer du matériel dangereux (explosif, poison, etc.).
+DESC RU: Сайты, описывающие способы создания опасных материалов(взрывчатые вещества, яды, и т. д.).
+DESC ES: Sitios que describen como hacer bombas y otros materiales peligrosos.
+NAME EN: Dangerous kits
+NAME FR: Assemblages dangereux
+NAME IT: Materiali Pericolosi
+NAME NL: Dangerous kits
+NAME DE: Gef&auml;hrliches Material
+NAME RU: Опасные наборы.
+NAME ES: Materiales peligrosos.
+
+NAME:   download
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites which propose to download software
+DESC FR: Sites qui permettent de télécharger des logiciels
+NAME EN: Software download
+NAME FR: Telechargement de logiciels
+
+NAME:	drogue
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites relative to drugs.
+DESC FR: Drogue.
+DESC RU: Сайты, имеющие отношение к наркотикам.
+DESC ES: Sitios relacionados con las drogas.
+NAME EN: Drug
+NAME FR: Drogue
+NAME IT: Droghe
+NAME NL: Verdovende middelen
+NAME RU: Наркотики
+NAME DE: Drogen
+NAME ES: Drogas
+
+NAME:	financial
+DEFAULT_TYPE: black
+SOURCE: https://www.squidguard.org
+DESC EN: Sites relative financial information.
+DESC FR: Informations financières, bourses.
+DESC RU: Сайты, связанные с финансовой информацией.
+NAME ES: Sitios relacionados con información financiera, bolsas.
+NAME EN: Financial
+NAME FR: Finance
+NAME IT: Financial
+NAME NL: Financial
+NAME RU: Финансы.
+NAME DE: Financial
+NAME ES: Finanzas
+
+NAME:	forums
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Forums site.
+DESC FR: Forums.
+DESC RU: Сайты-форумы.
+DESC ES: Foros
+NAME EN: Forums
+NAME FR: Forums
+NAME IT: Forum
+NAME NL: Forums
+NAME RU: Форумы
+NAME DE: Foren
+NAME ES: Foros
+
+NAME:	gambling
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Gambling and games sites, casino, etc.
+DESC FR: Sites de jeux en ligne, casino, etc.
+DESC RU: Азартные игры и игровые сайты, казино.
+DESC ES: Sitios de juego en línea, apuestas, casinos, etc.
+NAME EN: Gambling/Casino games
+NAME FR: Jeux casino
+NAME IT: Gioco d\azzardo/Casino
+NAME NL: Gokken/Casinospelen
+NAME RU: Азартные игры и казино
+NAME DE: Glueckspiel
+NAME ES: Apuestas/Casino
+
+NAME:	hacking
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Hacking sites.
+DESC FR: Sites de piratage et d'agressions informatiques.
+DESC RU: Сайты о взломе и о компьютерных атаках.
+DESC ES: Sitos de pirateo informático, hackers
+NAME EN: Hacking
+NAME FR: Hacking
+NAME IT: Hacking
+NAME NL: Hacken
+NAME RU: Хакерство
+NAME DE: Hacking
+NAME ES: Hacking
+
+NAME:	liste_bu
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: A french list for educational sites. VERY locally oriented. may help libraries.
+DESC FR: Une liste très "univ-tlse1.fr" de sites éducatifs pour notre bibliothèque.
+DESC RU: Французский список образовательных сайтов. ОЧЕНЬ местно ориентированный. Может помочь библиотекам.
+DESC ES: Una lista francesa de sitios educativos. Muy orientada a sitios franceses.
+NAME EN: Schools/Academics (french)
+NAME FR: Bibliothèques universitaires
+NAME IT: Scuola/Università in francese)
+NAME NL: Scholen/Academisch (frans)
+NAME RU: Школы/Академия (французкий)
+NAME DE: Universitaetsbibliothek (frankreich)
+NAME ES: Bibliotecas universitarias (Francesas)
+
+NAME:	mobile-phone
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites for mobile phone (rings, etc).
+DESC FR: Sites pour les mobiles (sonneries, etc.).
+DESC RU: Сайты для мобильных телефонов (рингтоны и т. д.).
+DESC ES: Sitios para teléfonos móviles (tonos, etc.)
+NAME EN: Mobile phone
+NAME FR: Téléphonie mobile
+NAME IT: Cellulari
+NAME NL: Mobiele telefonie
+NAME RU: Мобильный телефон
+NAME DE: Handy
+NAME ES: Telefonía móvil
+
+NAME:	phishing
+DEFAULT_TYPE: black
+SOURCE: https://www.surbl.org
+DESC EN: Phishing sites (same as malware category)
+DESC FR: Sites de phishing, de pièges bancaires, ou autres. Copie de la catégorie malware.
+DESC RU: Фишинг-сайты, банковские ловушки или другое.
+DESC ES: Sitios relacionados con phishing (suplantación de identidad)
+NAME RU: Фишинг.
+NAME EN: Phishing
+NAME FR: Phishing
+NAME IT: Phishing
+NAME NL: Phishing
+NAME DE: Phishing
+NAME ES: Phishing (suplantación de identidad)
+
+NAME:	publicite
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Advertisement.
+DESC FR: Publicité.
+DESC RU: Объявления.
+DESC ES: Publicidad
+NAME EN: Ads
+NAME FR: Publicité
+NAME IT: Pubblicità
+NAME NL: Reclame
+NAME RU: Реклама
+NAME DE: Anzeigen
+NAME ES: Publicidad
+
+NAME:	radio
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Internet radio sites
+DESC FR: Sites de radio sur Internet
+DESC RU: Сайты Интернет радио.
+DESC ES: Sitios de radio por internet.
+NAME EN: Internet radio
+NAME FR: Radio internet
+NAME IT: Internet radio
+NAME NL: Internet radio
+NAME RU: Радио Интернета
+NAME DE: Internet Radio
+NAME ES: Radio internet
+
+NAME:	redirector
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Some redirector sites, which are used to circumvent filtering.
+DESC FR: Quelques sites qui permettent de contourner les filtres.
+DESC RU: Некоторые перенаправляющие сайты, которые используются для обхода фильтрации.
+DESC ES: Sitios de redirección de contenidos, usados para eludir el filtrado.
+NAME EN: Proxy
+NAME FR: Proxy
+NAME IT: Proxy
+NAME NL: Proxy
+NAME RU: Прокси
+NAME DE: Proxy
+NAME ES: Proxy
+
+NAME:	strict_redirector
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Same as redirector, but with google, yahoo, and other cache/images search robots.
+DESC FR: Comme redirector, mais avec les moteurs de recherche classiques.
+DESC RU: Тоже, что и redirector, но с google, yahoo и другими поисковыми системами кэшей/изображений.
+DESC ES: Como redirector, pero con google, yahoo y otros motores de búsqueda clásicos.
+NAME EN: Strict Proxy
+NAME FR: Proxy strict
+NAME IT: Strict Proxy
+NAME NL: Strikte Proxy
+NAME RU: Строгое Прокси
+NAME DE: Strickt Proxy
+NAME ES: Proxy estricto
+
+NAME:	strong_redirector
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Same as strict_redirector, but, for google, yahoo, we are only blocking some terms.
+DESC FR: Comme strict_redirector, mais, pour google et autres, on ne bloque que certains termes.
+DESC RU: Тоже, что и strict_redirector, но для google, yahoo блокируются только некоторые условия.
+DESC ES: Como strict_redirector, pero para google, yahoo y otros sólo bloquean algunos términos.
+NAME EN: Strong Proxy
+NAME FR: Proxy fort
+NAME IT: Strong Proxy
+NAME NL: Strakke Proxy
+NAME RU: Крепкое Прокси
+NAME DE: Stark Proxy
+NAME ES: Proxy fuerte
+
+NAME:	tricheur
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites which are designed to explains cheating on exams.
+DESC FR: Sites qui expliquent comme tricher aux examens.
+DESC RU: Сайты, которые предназначены для объяснения как смошенничать на экзамене.
+DESC ES: Sitios que explican cómo hacer trampas en los exámenes.
+NAME EN: Cheater
+NAME FR: Tricheur
+NAME IT: Baro
+NAME NL: Cheats
+NAME RU: Мошенник
+NAME DE: Schummler
+NAME ES: Tramposos
+
+
+NAME:	warez
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Warez sites.
+DESC FR: Sites distribuant, entre autres, des logiciels ou vidéos pirates.
+DESC RU: Пиратские сайты программного обеспечения.
+DESC ES: Sitios de programas piratas.
+NAME FR: Warez DownloadZ
+NAME EN: Warez DownloadZ
+NAME IT: Warez DownloadZ
+NAME NL: Warez DownloadZ
+NAME RU: Нелегальное программное обеспечение
+NAME DE: Warez
+NAME ES: Programas piratas (Warez)
+
+NAME:	webmail
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Webmail sites (hotmail like...)
+DESC FR: Webmail que l'on trouve sur internet (hotmail, webmail.univ-tlse1.fr, etc.)
+DESC RU: Почтовые сайты (hotmail, webmail.univ-tlse1.fr и т. д.).
+DESC ES: Sitios de correo electrónico web. (hotmail, gmail, etc.)
+NAME EN: Webmail
+NAME FR: Messagerie Web
+NAME IT: Webmail
+NAME NL: Webmail
+NAME RU: Почта
+NAME DE: Webmail
+NAME ES: Mensajería web (webmail)
+
+NAME:	games
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: games sites (flash and online games )
+DESC FR: Sites de jeux, en ligne, ou de distributions de jeux.
+DESC RU: Игровые сайты (флеш и онлайн игры).
+DESC ES: Sitios de juegos, en línea, o de distribuciones de juegos.
+NAME RU: Игры.
+NAME EN: Games
+NAME FR: Jeux
+NAME IT: Games
+NAME NL: Games
+NAME DE: Spiele
+NAME ES: Juegos
+
+NAME:   educational_games
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: educational games sites (flash and online games )
+DESC FR: Sites de jeux éducatifs
+DESC RU: Развивающие игры
+DESC ES: Sitios de juegos educativos
+NAME RU: Развивающие игры
+NAME EN: Educational Games
+NAME FR: Jeux éducatifs
+NAME IT: giochi educativi
+NAME NL: educatieve spellen
+NAME DE: Lernspiele
+NAME ES: Juegos educativos
+
+
+NAME:	mixed_adult
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Websites which contains adult sections unstructured
+DESC FR: Sites qui contiennent des portions adultes non structurés
+DESC RU: Сайты, которые содержат неструктурированные разделы для взрослых.
+DESC ES: Sitios que contienen secciones para adultos no estructuradas.
+NAME RU: Смесь для взрослых.
+NAME EN: mixed_adult
+NAME FR: Varies_adultes
+NAME IT: mixed_adult
+NAME NL: mixed_adult
+NAME DE: mixed_adult
+NAME ES: Varios Adultos
+
+NAME:	filehosting
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Websites which host files (pictures, video, ...)
+DESC FR: Sites qui hébergent des contenus (vidéos, images, sons)
+DESC RU: Веб-сайты, которые хостят файлы (картинки, видео, ...).
+DESC ES: Sitios que almacenan ficheros (imagenes, videos, audio...)
+NAME RU: Хостинг файлов.
+NAME EN: filehosting
+NAME FR: hebergement_fichiers
+NAME IT: filehosting
+NAME NL: filehosting
+NAME DE: filehosting
+NAME ES: Almacenamiento de ficheros
+
+NAME:	reaffected
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Websites which have been reaffected
+DESC FR: Sites qui ont changé de propriétaire et donc de contenu
+DESC RU: Сайты, которые изменили владельца и, поэтому, содержимое.
+DESC ES: Sitios que han cambiado propietario y por tanto el contenido
+NAME RU: Пострадавшие.
+NAME EN: reaffected
+NAME FR: reaffected
+NAME IT: reaffected
+NAME NL: reaffected
+NAME DE: reaffected
+NAME ES: Sitios reutilizados (reaffected)
+
+
+NAME:	sexual_education
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Website which talk about sexual education, and can be misdetected as porn
+DESC FR: Sites qui parlent d éducation sexuelle et qui peuvent être détectés comme pornographiques
+DESC RU: Сайты, которые рассказывают о половом воспитании и могут быть ошибочно определены как порно.
+DESC ES: Sitios con contenidos acerca de la educación sexsual, y podrían ser catalogados por error como porno.
+NAME RU: Сексуальное образование.
+NAME EN: sexual_education
+NAME FR: education sexuelle
+NAME IT: sexual_education
+NAME NL: sexual_education
+NAME DE: sexual_education
+NAME ES: educación sexual
+
+NAME:	shopping
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Any shopping, selling center
+DESC FR: Sites de vente et achat en ligne
+DESC RU: Сайты "купи-продай".
+DESC ES: Sitios de tiendas, compras en línea.
+NAME RU: Шоппинг.
+NAME EN: shopping
+NAME FR: shopping
+NAME IT: shopping
+NAME NL: shopping
+NAME DE: shopping
+NAME ES: compras (shopping)
+
+NAME:	dating
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Dating, matching site for single person
+DESC FR: Sites de rencontres
+DESC RU: Сайты знакомств.
+DESC ES: Sitios de citas.
+NAME RU: Знакомства.
+NAME EN: dating
+NAME FR: rencontre
+NAME IT: dating
+NAME NL: dating
+NAME DE: dating
+NAME ES: citas
+
+NAME:	marketingware
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Very special marketing sites
+DESC FR: Sites de marketing très spéciaux
+DESC RU: Очень специальные маркетинговые сайты.
+DESC ES: Sitios de marketing muy especiales
+NAME RU: Маркетинг
+NAME EN: marketingware
+NAME FR: marketingware
+NAME IT: marketingware
+NAME NL: marketingware
+NAME DE: marketingware
+NAME ES: marketingware
+
+NAME:	astrology
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Astrology
+DESC FR: Astrologie
+DESC RU: Астрология.
+DESC ES: Astrología
+NAME RU: Астрология.
+NAME EN: Astrology
+NAME FR: Astrology
+NAME IT: Astrology
+NAME NL: Astrology
+NAME DE: Astrology
+NAME ES: Astrología
+
+NAME:	sect
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sect
+DESC FR: Secte
+DESC RU: Секты.
+DESC ES: Sectas
+NAME RU: Секты.
+NAME EN: Sect
+NAME FR: Secte
+NAME IT: Secte
+NAME NL: Secte
+NAME DE: Secte
+NAME ES: Sectas
+
+NAME:   celebrity
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Famous people, actors, and magazine which talk about them
+DESC FR: Tout ce qui concerne l actualité dite people
+DESC RU: Известные люди, актеры и журналы, которые говорят о них.
+DESC ES: Personajes famosos, actores y sitios relacionados con ellos
+NAME RU: Знаменитости.
+NAME EN: Celebrity
+NAME FR: Celebrite
+NAME IT: Celebrity
+NAME NL: Celebrity
+NAME DE: Celebrity
+NAME ES: Celebridades (Celebrity)
+
+NAME:   manga
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Any website related to manga, and cartoons
+DESC FR: Tout ce qui est lié à l'univers des mangas et de la bande dessinée
+DESC RU: Любой веб-сайт, связанный с аниме, комиксами и мультфильмами.
+DESC ES: Sitios relacionados con el manga.
+NAME RU: Аниме.
+NAME EN: Manga
+NAME FR: Manga
+NAME IT: Manga
+NAME NL: Manga
+NAME DE: Manga
+NAME ES: Manga
+
+NAME:   child
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Any website allowed to child (less than 10 years old)
+DESC FR: Tout ce qui est autorisé pour des enfants
+DESC RU: Любой веб-сайт, разрешенный ребенку (до 10 лет).
+DESC ES: Sitos autorizados para niños (menosres de 10 años)
+NAME RU: Ребенок.
+NAME EN: Child
+NAME FR: Enfant
+NAME IT: Bambino
+NAME NL: Child
+NAME DE: Child
+NAME ES: Niños
+
+NAME:   malware
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Any website which deliver malware
+DESC FR: Tout site qui injecte des malwares
+DESC RU: Любой сайт, который внедряет вредоносные программы.
+DESC ES: Sitios que inyectan programas dañinos (malware)
+NAME RU: Вредоносные программы.
+NAME EN: Malware
+NAME FR: Malware
+NAME IT: Malware
+NAME NL: Malware
+NAME DE: Malware
+NAME ES: Malware
+
+NAME:	press
+DEFAULT_TYPE:	white
+SOURCE:	https://squidguard.ut-capitole.fr
+DESC EN: Any press (informational) site
+DESC FR: Tout site de presse d'information
+DESC RU: Любая пресса (информационные сайты).
+DESC ES: Sitios de prensa (información)
+NAME RU: Пресса.
+NAME EN: Press
+NAME FR: Presse
+NAME IT: Press
+NAME NL: Press
+NAME DE: Press
+NAME ES: Prensa
+
+NAME: chat
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Chat site
+DESC FR: Site de dialogue et conversation en ligne.
+DESC RU: Сайты-чаты, диалоги.
+DESC ES: Sitios de conversación en línea.
+NAME RU: Чаты.
+NAME EN: Chat
+NAME FR: Tchat
+NAME IT: Chat
+NAME NL: Chat
+NAME DE: Chat
+NAME ES: Chat
+
+NAME: remote-control
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: site which allow remote control of user s dekstop
+DESC FR: Site permettant la prise de contrôle à distance
+DESC RU: Cайты, которые делают возможным удаленное (дистанционное) управление рабочим столом пользователя.
+DESC ES: Sitios que permiten el control remoto del escritorio del usuario.
+NAME RU: Удаленное управление.
+NAME EN: remote-control
+NAME FR: Prise de controle
+NAME IT: remote-control
+NAME NL: remote-control
+NAME DE: remote-control
+NAME ES: control remoto
+
+NAME: social_networks
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: All social networks sites
+DESC FR: Tous les sites de réseaux sociaux
+DESC RU: Все сайты социальных сетей.
+DESC ES: Sitios de relaciones sociales
+NAME RU: Социальные сети.
+NAME EN: social_networks
+NAME FR: reseaux sociaux
+NAME IT: social_networks
+NAME NL: social_networks
+NAME DE: social_networks
+NAME ES: relaciones sociales
+
+NAME: jobsearch
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Site to looking for job
+DESC FR: Site pour trouver un emploi
+DESC RU: Сайты о поиске работы.
+DESC ES: Sitios de búsqueda de empleo
+NAME RU: Поиск работы.
+NAME EN: jobsearch
+NAME FR: emploi
+NAME IT: jobsearch
+NAME NL: jobsearch
+NAME DE: jobsearch
+NAME ES: búsqueda de empleo
+
+NAME: sports
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sports
+DESC FR: Sports
+DESC RU: Спортивные сайты.
+DESC ES: Sitios de deportes
+NAME RU: Спорт.
+NAME EN: sports
+NAME FR: sports
+NAME IT: sports
+NAME NL: sports
+NAME DE: sports
+NAME ES: deportes
+
+NAME: bank
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Online bank
+DESC FR: Banque en ligne
+DESC RU: Онлайн банки.
+DESC ES: Banca en línea
+NAME RU: Банки.
+NAME EN: bank
+NAME FR: banques
+NAME IT: bank
+NAME NL: bank
+NAME DE: bank
+NAME ES: banca
+
+NAME: arjel
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: ARJEL which is a french certification authority for gambling sites
+DESC FR: Sites de pari en ligne certifiés par l ARJEL
+DESC RU: Сайты, сертификацированные французским центром ARJEL для сайтов азартных игр.
+DESC ES: ARJEL, que es una certificación francesa para sitios de apuestas en línea.
+NAME RU: ARJEL.
+NAME EN: arjel
+NAME FR: arjel
+NAME IT: arjel
+NAME NL: arjel
+NAME DE: arjel
+NAME ES: arjel
+
+NAME: cooking
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites for cooking
+DESC FR: Sites de cuisine
+DESC RU: Сайты для приготовления пищи.
+DESC ES: Sitios de cocina
+NAME RU: Приготовление пищи.
+NAME EN: cooking
+NAME FR: cuisine
+NAME IT: cooking
+NAME NL: cooking
+NAME DE: cooking
+NAME ES: cocina (cooking)
+
+NAME: lingerie
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites for lingerie
+DESC FR: Sites de lingerie
+DESC RU: Сайты дамского белья.
+DESC ES: Sitios de lencería
+NAME RU: Дамское белье.
+NAME EN: lingerie
+NAME FR: lingerie
+NAME IT: lingerie
+NAME NL: lingerie
+NAME DE: lingerie
+NAME ES: lencería
+
+NAME: translation
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites for translation
+DESC FR: Sites de traduction
+DESC RU: Сайты для перевода.
+DESC ES: Sitios para traducir.
+NAME RU: Перевод.
+NAME EN: translation
+NAME FR: traduction
+NAME IT: translation
+NAME NL: translation
+NAME DE: translation
+NAME ES: traducción
+
+NAME: bitcoin
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: Sites for bitcoin mining
+DESC FR: Sites de bitcoin
+DESC ES: Sitios de bitcoin
+NAME RU: bitcoin
+NAME EN: bitcoin
+NAME FR: bitcoin
+NAME IT: bitcoin
+NAME NL: bitcoin
+NAME DE: bitcoin
+NAME ES: bitcoin
+
+NAME: dialer
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Sites de dialer
+DESC EN: Dialer Sites
+DESC ES: Sitios de marcadores (dialer)
+NAME RU: dialer
+NAME EN: dialer
+NAME FR: dialer
+NAME IT: dialer
+NAME NL: dialer
+NAME DE: dialer
+NAME ES: marcadores (dialer)
+
+NAME: ddos
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Sites de déni de services
+DESC EN: DDoS or Stresser Sites
+DESC ES: Sitios de Deny of services (ddos)
+NAME RU: ddos
+NAME EN: ddos
+NAME FR: ddos
+NAME IT: ddos
+NAME NL: ddos
+NAME DE: ddos
+NAME ES: ddos
+
+NAME: update
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Sites d'update pour les OS ou les logiciels
+DESC EN: Update sites for software or OS
+NAME RU: update
+NAME EN: update
+NAME FR: update
+NAME IT: update
+NAME NL: update
+NAME DE: update
+NAME ES: update
+
+NAME: associations_religieuses
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Sites d'associations religieuses
+DESC EN: religious_association
+NAME RU: религиозное_объединение
+NAME EN: religious_association
+NAME FR: associations_religieuses
+NAME IT: associazione_religiosa
+NAME NL: religieuze_vereniging
+NAME DE: teligionsgemeinschaft
+NAME ES: asociación_religiosa
+
+NAME: shortener
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Raccoursisseur d'URL
+DESC EN: URLs shortening sites
+NAME RU: shortener
+NAME EN: shortener
+NAME FR: shortener
+NAME IT: shortener
+NAME NL: shortener
+NAME DE: shortener
+NAME ES: shortener
+
+NAME: cryptojacking
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Site de mining en hijacking
+DESC EN: Mining site by hijacking
+NAME RU: cryptojacking
+NAME EN: cryptojacking
+NAME FR: cryptojacking
+NAME IT: cryptojacking
+NAME NL: cryptojacking
+NAME DE: cryptojacking
+NAME ES: cryptojacking
+
+NAME: vpn
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Site de VPN
+DESC EN: VPN site
+NAME RU: vpn
+NAME EN: vpn
+NAME FR: vpn
+NAME IT: vpn
+NAME NL: vpn
+NAME DE: vpn
+NAME ES: vpn
+
+NAME: stalkerware
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Site diffusant des outils d'espionnage pour les particuliers
+DESC EN: Site which sells spying software for everybody 
+NAME RU: stalkerware
+NAME EN: stalkerware
+NAME FR: stalkerware
+NAME IT: stalkerware
+NAME NL: stalkerware
+NAME DE: stalkerware
+NAME ES: stalkerware
+
+NAME: doh
+DEFAULT_TYPE: black
+SOURCE: https://squidguard.ut-capitole.fr
+DESC FR: Serveurs DNS over HTTP ou équivalent
+DESC EN: Site which provides DNS over HTTP service
+NAME RU: doh
+NAME EN: doh
+NAME FR: doh
+NAME IT: doh
+NAME NL: doh
+NAME DE: doh
+NAME ES: doh
+
+NAME:	examen_pix
+DEFAULT_TYPE: white
+SOURCE: https://squidguard.ut-capitole.fr
+DESC EN: A list reserved exclusively for French students taking the PIX exam. DO NOT USE in other circumstances
+DESC FR: Une liste uniquement réservée aux élèves français passant l examen PIX. NE PAS UTILISER dans d autres circonstances
+DESC RU: Список предназначен исключительно для французских студентов, сдающих экзамен PIX. НЕ ИСПОЛЬЗУЙТЕ при других обстоятельствах
+DESC ES: Una lista reservada exclusivamente para estudiantes franceses que realicen el examen PIX. NO USE en otras circunstancias
+NAME EN: Schools/PIX (french)
+NAME FR: Ecoles/PIX
+NAME IT: Scuola PIX/Università in francese)
+NAME NL: Scholen PIX/Academisch (frans)
+NAME RU: Школы PIX/Академия (французкий)
+NAME DE: Universitaet PIX (frankreich)
+NAME ES: Universitarias PIX (Francesas)

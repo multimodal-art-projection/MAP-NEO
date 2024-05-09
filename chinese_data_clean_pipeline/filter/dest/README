@@ -1,0 +1,91 @@
+
+These files are contributions for the squidguard software
+http://www.squidguard.org
+
+Licence :
+---------
+These files are under creative commons :
+http://creativecommons.org/licenses/by-sa/2.0/
+
+Informations :
+--------------
+All informations are available on
+	http://cri.univ-tlse1.fr/blacklists/
+
+databases :
+-----------
+Main database :
+
+blacklists.tar.gz       is the compilation of all the databases described ahead.
+
+adult.tar.gz		is a list of adult sites. They are based on
+                        - squidguard Robot 
+                        - external databases
+                        - personnal additions
+                        - external additions
+                               thanks to
+                                        Cedric Foll
+                                        David Garroux du CARIP de Lyon
+                                        Deckert Florian <net74@sopra.com>
+                                        Francesco Mascaro
+					Hans Musil
+                                        Jago <jago27@usa.net>
+                                        Kris Carlier <CARLIER.K@JS.MIL.BE>
+                                        Mark Bizzell <bizzell@usq.edu.au>
+                                        Mark Kool
+                                        Michel Roiron <webmaster@cfa.fr>
+                                        Philippe Ferreira <ferreira@atalante-acd.com>
+                                        Rick Matthews
+					Rogério Pinheiro da Silva (Prodesan)
+                                        Sylvain Vincent <sylvain.vincent@cfsa-aftec.com>
+                                        Symon Aked
+                                        Todd Sieland-Peterson
+
+Last version Sunday 31 December 2023 with 4514441 domains and 13662 urls : 17356 Kb.
+			
+
+OTHER :
+agressif.tar.gz		is a list of aggressive sites (xenophobe, ..)
+audio-video.tar.gz	audio and video sites
+blog.tar.gz		is a list of blogs
+drogue.tar.gz		is a list for drug
+forums.tar.gz		is a list of common public mail and chat
+                        thanks to
+				Arnaud DA COSTA <Arnaud.DA-COSTA@u-bourgogne.fr>
+gambling.tar.gz		gambling
+games.tar.gz		internet games (flash, online games, ..) 
+			thanks to
+				Yann Cézard (CRI - Université de Pau et des Pays de l'Adour)  
+
+hacking.tar.gz		
+liste_bu.tar.gz		is designed to be used as a FRENCH whitelist for library
+                        thanks to
+                                 Service de Documentation de l'Universite Toulouse 1
+mobile-phone.tar.gz	is a list a mobile dedicated sites
+phishing.tar.gz		is a list of phishing sites (came from surbl.org)
+publicite.tar.gz	is a list of banner and ad sites
+                        thanks to
+                                 Jose Pires <pires@nantaise-habitations.fr>
+radio.tar.gz		is a small list of radio sites (to prevent radio listening)
+redirector.tar.gz	common redirector to bypass filtering
+strict_redirector.tar.gz	is a like the previous one with some useful, but "maybe dangerous" sites
+                        (cached sites in google, images.google.fr, alltheweb.com and images, ...)
+strong_redirector.tar.gz	is a like the previous one with specific "expressions". It blocked only
+			some terms in a "google search".
+tricheur.tar.gz		is a database of site designed to cheat during exams
+warez.tar.gz		is a list of warez sites
+webmail.tar.gz		is a list of common webmail
+			
+			----------------------------
+       OF COURSE, mistakes may exist. If you found some, send me a mail :
+                 fabrice.prigent@univ-tlse1.fr
+	
+
+scripts (beta stage) :
+----------------------
+blocked.src		is an example of a blocking page (see also squidguard.cgi)
+ajout_squidguard.sh	is a script to merge databases
+recherche_porno.pl	these two scripts search "inappropriate urls" in a access.log
+recherche_porno.sh	
+scripts.tar.gz		all scripts in tar form
+taille_categorie_squid.pl	print percentage of somes categories
