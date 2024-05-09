@@ -6,7 +6,7 @@ MAP-NEO is a fully open-sourced Large Language Model that includes the pretraini
 
 ## Model & DATA Downloads
 
-We release the MAP-NEO 7B, including both base and chat models, to the public. To support a broader and more diverse range of research within both academic and commercial communities. Please **note** that the use of this model is subject to the terms outlined in [License section](#5-license). Commercial usage is permitted under these terms.
+We release the MAP-NEO 7B, including both base and chat models, to the public. To support a broader and more diverse range of research within both academic and commercial communities. Please **note** that the use of this model is subject to the terms outlined in [License section](#license). Commercial usage is permitted under these terms.
 
 ### Huggingface
 
@@ -14,6 +14,8 @@ We release the MAP-NEO 7B, including both base and chat models, to the public. T
 |:---------------------:|:-----------------------------------------------------------------------:|
 | MAP-NEO 7B Base       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_decay)  |
 | MAP-NEO 7B intermedia       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_intermediate)  |
-| MAP-NEO 2B Base       | 🤗 [HuggingFace]([https://huggingface.co/m-a-p/neo_7b_decay](https://huggingface.co/m-a-p/neo_2b_general))  |
+| MAP-NEO 2B Base       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_2b_general)  |
 | MAP-NEO 7B Chat      | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_decay)  |
 | MAP-NEO DATA Matrix   | 🤗 [HuggingFace](https://huggingface.co/datasets/m-a-p/Matrix)  |
+## License
+This code repository is licensed under the MIT License. The use of DeepSeekMoE models is subject to the Model License. DeepSeekMoE supports commercial use.
