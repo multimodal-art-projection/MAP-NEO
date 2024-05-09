@@ -23,9 +23,10 @@ python -m pip install fastdeploy-gpu-python -f https://www.paddlepaddle.org.cn/w
 To convert a PDF to a document format, execute the following command:
 
 ```python
-python multi_thread_process_to_doc.py <pdf-path>
+python multi_thread_process_to_doc.py <pdf-path> --process-num 8 
 ```
 This command processes the PDF located at <pdf-path> using multi-threaded operations to expedite the conversion process.
+Our uses the multithreading feature of fastdeploy. If a GPU OOM (Out of Memory) error occurs, you may consider suitably decreasing the <process-num>.
 
 Note:
 Ensure you replace <pdf-path> with the actual path to the PDF file you wish to convert.
