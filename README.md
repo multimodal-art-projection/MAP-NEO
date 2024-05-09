@@ -12,10 +12,13 @@ We release the MAP-NEO 7B, including both base and chat models, to the public. T
 
 |         Model         |                                 Download                                 |
 |:---------------------:|:-----------------------------------------------------------------------:|
-| MAP-NEO 7B Base       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_decay)  |
+| MAP-NEO 7B Base       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b)  |
 | MAP-NEO 7B intermedia       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_intermediate)  |
+| MAP-NEO 7B decay       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_decay)  |
 | MAP-NEO 2B Base       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_2b_general)  |
-| MAP-NEO 7B Chat      | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_decay)  |
+| MAP-NEO scalinglaw 980M       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_scalinglaw_980M)  |
+| MAP-NEO scalinglaw 460M       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_scalinglaw_460M)  |
+| MAP-NEO scalinglaw 250M       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_scalinglaw_250M)  |
 | MAP-NEO DATA Matrix   | 🤗 [HuggingFace](https://huggingface.co/datasets/m-a-p/Matrix)  |
 ## License
 This code repository is licensed under the MIT License. The use of DeepSeekMoE models is subject to the Model License. DeepSeekMoE supports commercial use.
