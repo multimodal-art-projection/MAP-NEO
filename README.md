@@ -21,4 +21,4 @@ We release the MAP-NEO 7B, including both base and chat models, to the public. T
 | MAP-NEO scalinglaw 250M       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_scalinglaw_250M)  |
 | MAP-NEO DATA Matrix   | 🤗 [HuggingFace](https://huggingface.co/datasets/m-a-p/Matrix)  |
 ## License
-This code repository is licensed under the MIT License. The use of DeepSeekMoE models is subject to the Model License. DeepSeekMoE supports commercial use.
+This code repository is licensed under the MIT License. 
