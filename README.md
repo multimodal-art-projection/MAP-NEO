@@ -18,7 +18,7 @@
   </a>
 
 </div>
-  <a href="https://discord.gg/XXrqKD5w" target="_blank">
+  <a href="https://discord.com/invite/qeRsjRdRHf" target="_blank">
     <img alt="Discord" src="https://img.shields.io/badge/Discord-MAP%20NEO-7289da?logo=discord&logoColor=white&color=7289da" />
   </a>
   <a href="figure/Wechat_QR.jpg" target="_blank">
