@@ -9,10 +9,11 @@
     <p>
     </p>
  <div align="center">
- <a href="https://github.com/multimodal-art-projection/MAP-NEO" target="_blank">
-    <img alt="Homepage" src="figure/map-logo-c.svg" style="width: auto; height: 20px;"/>
-</a>
-  <a href="https://github.com/multimodal-art-projection/MAP-NEO"><img src="https://img.shields.io/badge/HomePage-MAP%20NEO-orange" alt="version"></a>
+
+ <img alt="Homepage" src="figure/map-logo-c.svg" style="width: auto; height: 20px;"/>
+
+  <a href="https://map-neo.github.io/"><img src="https://img.shields.io/badge/HomePage-MAP%20NEO-orange" alt="version"></a>
+
   <a href="https://huggingface.co/collections/m-a-p/neo-models-66395a5c9662bb58d5d70f04" target="_blank">
     <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-MAP%20NEO-ffc107?color=ffc107&logoColor=white" />
   </a>
@@ -40,6 +41,7 @@ We evaluated the MAP-Neo 7B Series and other similarly sized models on various b
 <img src="figure/eval_radar.png" alt="table" width="100%">
 </p>
 
+For more detaileds on the performance across different benchmarks, please refer to https://map-neo.github.io/.
 
 ## Model & DATA Downloads
 
