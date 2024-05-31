@@ -32,12 +32,12 @@
 
 
 ## Evaluation Results
-### MAP-NEO 7B Base
+### MAP-NEO 7B Series
 
-We evaluate MAP-NEO 7B on various benchmarks, as shown in the following.
+We evaluated the MAP-Neo 7B Series and other similarly sized models on various benchmarks, as shown in the following.
 
 <p align="center">
-<img src="figure/base_eval_results.jpg" alt="table" width="50%">
+<img src="figure/eval_radar.png" alt="table" width="100%">
 </p>
 
 
@@ -47,9 +47,11 @@ We are pleased to announce the public release of the MAP-NEO 7B, including base 
 
 ### Huggingface
 
-|         Model         |                                 Download                                 |
+|         Model & Dataset         |                                 Download                                 |
 |:---------------------:|:-----------------------------------------------------------------------:|
 | MAP-NEO 7B Base       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b)  |
+| MAP-NEO 7B Instruct       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_instruct_v0.1)  |
+| MAP-NEO 7B SFT       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_sft_v0.1)  |
 | MAP-NEO 7B intermedia       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_intermediate)  |
 | MAP-NEO 7B decay       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_7b_decay)  |
 | MAP-NEO 2B Base       | 🤗 [HuggingFace](https://huggingface.co/m-a-p/neo_2b_general)  |
