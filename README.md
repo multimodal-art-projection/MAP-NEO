@@ -64,6 +64,16 @@ We are pleased to announce the public release of the MAP-NEO 7B, including base 
 ## License
 This code repository is licensed under the MIT License. 
 
+## Citation
+```
+@article{zhang2024mapneo,
+    title   = {MAP-Neo: Highly Capable and Transparent Bilingual Large Language Model Series},
+    author  = {Ge Zhang and Scott Qu and Jiaheng Liu and Chenchen Zhang and Chenghua Lin and Chou Leuang Yu and Danny Pan and Esther Cheng and Jie Liu and Qunshu Lin and Raven Yuan and Tuney Zheng and Wei Pang and Xinrun Du and Yiming Liang and Yinghao Ma and Yizhi Li and Ziyang Ma and Bill Lin and Emmanouil Benetos and Huan Yang and Junting Zhou and Kaijing Ma and Minghao Liu and Morry Niu and Noah Wang and Quehry Que and Ruibo Liu and Sine Liu and Shawn Guo and Soren Gao and Wangchunshu Zhou and Xinyue Zhang and Yizhi Zhou and Yubo Wang and Yuelin Bai and Yuhan Zhang and Yuxiang Zhang and Zenith Wang and Zhenzhu Yang and Zijian Zhao and Jiajun Zhang and Wanli Ouyang and Wenhao Huang and Wenhu Chen},
+    year    = {2024},
+    journal = {arXiv preprint arXiv: 2405.19327}
+}
+```
+
 ## Contact
 
 
