@@ -41,7 +41,7 @@ We evaluated the MAP-Neo 7B Series and other similarly sized models on various b
 <img src="figure/eval_radar.png" alt="table" width="100%">
 </p>
 
-For more detaileds on the performance across different benchmarks, please refer to https://map-neo.github.io/.
+For more details on the performance across different benchmarks, please refer to https://map-neo.github.io/.
 
 ## Model & DATA Downloads
 
