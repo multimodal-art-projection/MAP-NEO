@@ -17,6 +17,9 @@
   <a href="https://huggingface.co/collections/m-a-p/neo-models-66395a5c9662bb58d5d70f04" target="_blank">
     <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-MAP%20NEO-ffc107?color=ffc107&logoColor=white" />
   </a>
+  <a href="https://arxiv.org/abs/2405.19327" target="_blank">
+    <img alt="Arxiv" src="https://img.shields.io/badge/Arxiv-MAP%20NEO-7289da?logo=arxiv&logoColor=red&color=red" />
+  </a>
 
 </div>
   <a href="https://discord.com/invite/qeRsjRdRHf" target="_blank">
