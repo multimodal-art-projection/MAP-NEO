@@ -1,6 +1,7 @@
 import argparse
 import os
 import time
+import cv2
 import fastdeploy as fd
 from multiprocessing import Pool
 # from threading import Thread
@@ -12,8 +13,19 @@ from latex.latex_rec import Latex2Text, sort_boxes
 from table.utils import TableMatch
 from utils import convert_info_docx, convert_info_md, download_and_extract_models, read_image, read_yaml, save_structure_res, sorted_layout_boxes
 from table.table_det import table
+from tools.llm_post_process import AsyncLLMQueryHandler, thread_pool_executor_for_async
+from tools.visualize import draw_ocr_box_txt, draw_ocr, draw_box_txt_fine, colors
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+def init_app_id():
+    global app_id
+    app_id = os.environ.get('app_id')
+    global api_key
+    api_key = os.environ.get('api_key')
+
+    global post_process
+    post_process = True
 
 device = "gpu"
 device_id = 0
@@ -169,7 +181,7 @@ def process_predict(pdf_info, img_idx=0):
     images = read_image(pdf_info[0])
     all_res = []
     start = time.time()
-    for image in images:
+    for index, image in enumerate(images):
         ori_im = image.copy()
         if layout_model is not None:
             layout_time1 = time.time()
@@ -294,16 +306,34 @@ def process_predict(pdf_info, img_idx=0):
                 'img_idx': img_idx
             })
         end = time.time()
-        # print(end - start)
+        print(end - start)
 
         save_structure_res(res_list, "output", pdf_info[1])
         h, w, _ = image.shape
         res = sorted_layout_boxes(res_list, w)
         all_res += res
+
+        if visualize:
+            # ocr_text = [[''.join(i2['text']) for i2 in i['res']] for i in res_list]
+            # text_list = ['' if not i else ''.join(i) for i in ocr_text]
+            visualize_img = draw_ocr(image.copy(), [[[i['bbox'][0],i['bbox'][1]],[i['bbox'][2],i['bbox'][1]],[i['bbox'][2],i['bbox'][3]],[i['bbox'][0],i['bbox'][3]]] for i in res_list], [i['type'] for i in res_list])
+            cv2.imwrite(os.path.join(os.path.join("output", pdf_info[1]), 'visualize_{}.jpg'.format(index)), visualize_img)
+            # for i in res_list:
+            #     res_bbox = [i['text_region'] for i in i['res']]
+            #     fixed_offset = [[i['bbox'][0],i['bbox'][1]],[i['bbox'][2],i['bbox'][1]],[i['bbox'][2],i['bbox'][3]],[i['bbox'][0],i['bbox'][3]]]
+                
+            #     result_bbox = [[[x - fixed_offset[j][0], y - fixed_offset[j][1]] for j, (x, y) in enumerate(region)] for region in res_bbox]
+
+            #     visualize_img = draw_ocr(visualize_img, result_bbox, [i['type'] for _ in range(len(i['res']))])
+
+    if post_process:
+        handler = AsyncLLMQueryHandler()
+        results = thread_pool_executor_for_async(handler.async_process_queries, all_res)
     convert_info_md(images, all_res, "output", pdf_info[1])
     # save all_res to json
-    with open(os.path.join(os.path.join("output", pdf_info[1]), 'res.pkl'), "wb") as f:
-        pickle.dump({'data': all_res, 'name': pdf_info[0]}, f)
+    if intermediate:
+        with open(os.path.join(os.path.join("output", pdf_info[1]), 'res.pkl'), "wb") as f:
+            pickle.dump({'data': all_res, 'name': pdf_info[0]}, f)
 
 # class NumpyEncoder(json.JSONEncoder):
 #     def default(self, obj):
@@ -322,9 +352,43 @@ if __name__ == '__main__':
     parser.add_argument('--formula-path', default='models/latex_rec.pth', help='Path to the LaTeX recognition model.')
     parser.add_argument('--anay-path', default='models/mfd.pt', help='Path to the analysis model.')
     parser.add_argument('--rec-bs', type=int, default=16, help='Recognition batch size.')
+    parser.add_argument('--post-process', default=False, help='LLMs are utilized for post-processing.')
+    parser.add_argument('--save-intermediate', action='store_true', default=False, help='Save intermediate files during the process (default: False)')
+    parser.add_argument('--visualize-layout', action='store_true', default=False, help='Enable saving of intermediate layout visualization files to track the processing steps. By default, this feature is disabled.')
     args = parser.parse_args()
 
     download_and_extract_models()
+
+    global intermediate
+    if args.save_intermediate:
+        intermediate = True
+    else:
+        intermediate = False
+
+    global visualize
+    if args.visualize_layout:
+        visualize = True
+    else:
+        visualize = False
+
+    global post_process
+    if args.post_process:
+
+        # 检查环境变量是否存在
+        app_id = os.environ.get('app_id')
+        api_key = os.environ.get('api_key')
+
+        # 如果环境变量存在，进行后处理
+        if api_key and app_id:
+            init_app_id()
+            
+            print(f"Post-processing is enabled.")
+        else:
+            post_process = False
+            print("API Key or Secret Key not found in environment variables. Post-processing cannot proceed.")
+    else:
+        post_process = False
+        print("Post-processing is disabled.")
 
     use_multi_process = args.use_multi_process
     process_num = args.process_num

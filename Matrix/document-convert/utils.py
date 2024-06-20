@@ -1,6 +1,8 @@
 import argparse
 import copy
+from html.parser import HTMLParser
 import os
+import random
 import tarfile
 import time
 import traceback
@@ -13,6 +15,9 @@ import cv2
 import numpy as np
 import urllib.request
 import yaml
+from copy import deepcopy
+import json
+import fitz
 from onnxruntime import (
     GraphOptimizationLevel,
     InferenceSession,
@@ -26,8 +31,6 @@ import re
 import docx
 from docx import Document
 from bs4 import BeautifulSoup
-from html.parser import HTMLParser
-
 from lxml import html
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
@@ -1288,8 +1291,6 @@ def get_minarea_rect_crop(img, points):
     crop_img = get_rotate_crop_image(img, np.array(box))
     return crop_img
 
-
-
 class aggr():
     def __init__(self, det, rec, drop_score = 0.5) -> None:
         self.text_detector = det
@@ -1332,7 +1333,7 @@ class MarkdownDocument:
     def add_figure(self, figure=None):
         if figure:
             # self.content.append(f"![]({figure})\n\n")
-            self.content += f"![]({figure})\n\n"
+            self.content += f"![](<{figure}>)\n\n"
         else:
             print("No figure URL provided, the figure will not be added.")
 
@@ -1375,7 +1376,7 @@ def convert_info_md(img, res, save_folder, img_name):
         elif region['type'].lower() == 'table':
             md_out.add_table(region['res']['html'])
         elif region['type'].lower() == 'text':
-            txt = '\n'.join(it['text'] for it in region['res'])
+            txt = ' '.join(it['text'] for it in region['res'])
             md_out.add_text(txt)
         elif region['type'].lower() == 'title':
             txt = ' '.join(it['text'] for it in region['res'])
@@ -1387,12 +1388,6 @@ def convert_info_md(img, res, save_folder, img_name):
             
     md_path = os.path.join(save_folder, f'{img_name}_ocr.md')
     md_out.save(md_path)
-
-from copy import deepcopy
-import json
-import os
-import time
-import fitz
 
 def read_image(image_file) -> list:
     if os.path.basename(image_file)[-3:] == 'pdf':
