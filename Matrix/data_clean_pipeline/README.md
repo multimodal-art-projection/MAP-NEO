@@ -20,22 +20,22 @@ Here is an example command to run exact document deduplication
 spark-submit \
     ./dedup/Exact_Document_Deduplication/exact_document_deduplication.py --input_dir input_dir --output_dir output_dir
 ``` 
-where input_dir is the directory to story the jsonl files, output_dir is the dirtory to save the deduplicated jsonl file.
+where input_dir is the directory to store the jsonl files, output_dir is the directory to save the deduplicated jsonl file.
 ## Minhash_Lsh_Deduplication
 Here is an example command to run exact document deduplication
 ```
 spark-submit \
     ./dedup/Minhash_Lsh_Deduplication/minhashLsh.py --input_dir input_dir --inter_dir inter_dir --output_dir output_dir
 ``` 
-where input_dir is the directory to story the jsonl files, output_dir is the dirtory to save the deduplicated jsonl file  and inter_dir is the dirtory to save minhash value
+where input_dir is the directory to store the jsonl files, output_dir is the directory to save the deduplicated jsonl file  and inter_dir is the directory to save minhash value
 ## Paragraph_Deduplication
 ```
 spark-submit \
     ./dedup/Paragraph_Deduplication/paragraph.py --input_dir input_dir  --output_dir output_dir
 ```
-where input_dir is the directory to story the jsonl files, output_dir is the dirtory to save the deduplicated jsonl file.
+where input_dir is the directory to store the jsonl files, output_dir is the directory to save the deduplicated jsonl file.
 ## Exact_Document_Deduplication
 ```
 ./dedup/Exact_Document_Deduplication/exact_document_deduplication.py --input_dir input_dir --output_dir output_dir
 ```
-where input_dir is the directory to story the jsonl files, output_dir is the dirtory to save the deduplicated jsonl file.
+where input_dir is the directory to store the jsonl files, output_dir is the directory to save the deduplicated jsonl file.
